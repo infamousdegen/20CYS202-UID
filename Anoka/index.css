@@ -1,0 +1,38 @@
+.Navigation-Bar{
+    background-color: black;
+    overflow: hidden;
+
+
+}
+
+.Navigation-Bar a{
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.Navigation-Bar a:hover {
+    color: white;
+    background-color: brown;
+  }
+
+.Navigation-Bar a.active {
+    background-color:brown;
+    color: white;
+  }
+
+#main-body{
+    background-color: aqua;
+}
+
+#Nav-Img{
+    width: 150px;
+    padding-left: 970px;
+}
+
+
+
+  
