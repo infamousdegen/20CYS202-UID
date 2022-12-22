@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>A-Faucet - Login</title>
+        <meta name="viewport" contect="width=device-width,initial-scale=1">
+        <link style="border-radius: 50%" rel="icon" href="./imgs/icon.png">
+            <style>
+              body
+              {
+              background-image: linear-gradient(to bottom right, #C24FB6 , #5451B7);
+              font-family: "Montserrat",sans-serif;
+              background-repeat: no-repeat;
+              width:100%;
+              height: 100vh;
+              }
+      
+      *{
+          margin: 0;
+          padding: 0;
+        }
+        
+              </style>
+    </head>
+    <header>
+        <style> 
+          @import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+        *{
+            font-family: "Montserrat",sans-serif;
+        }
+        </style>
+    </head>
+    <body>
+        <style>
+          a {
+  text-decoration: none;
+}
+body {
+  background: -webkit-linear-gradient(bottom, #C24FB6, #5451B7);
+  background-repeat: no-repeat;
+}
+label {
+  font-family: "Raleway", sans-serif;
+  font-size: 11pt;
+}
+#forgot-pass {
+  color: #C24FB6 ;
+  font-family: "Raleway", sans-serif;
+  font-size: 10pt;
+  margin-top: 3px;
+  text-align: right;
+}
+#card {
+  background: #fbfbfb;
+  border-radius: 8px;
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+  height: 470px;
+  width: 380px;
+  margin-top: 10px;
+  margin-left: 580px;
+  
+ 
+}
+#card-content {
+  padding: 40px 44px;
+}
+#card-title {
+  font-family: "Raleway Thin", sans-serif;
+  letter-spacing: 4px;
+  padding-bottom: 23px;
+  padding-top: 13px;
+  text-align: center;
+}
+#signup {
+  color: #C24FB6 ;
+  font-family: "Raleway", sans-serif;
+  font-size: 10pt;
+  margin-top: 16px;
+  text-align: center;
+}
+#submit-btn {
+  background: -webkit-linear-gradient(right, #C24FB6 , #5451B7);
+  border: none;
+  border-radius: 21px;
+  box-shadow: 0px 1px 8px #5451B7;
+  cursor: pointer;
+  color: white;
+  font-family: "Raleway SemiBold", sans-serif;
+  height: 42.3px;
+  margin: 0 auto;
+  margin-top: 50px;
+  transition: 0.25s;
+  width: 153px;
+}
+#submit-btn:hover {
+  box-shadow: 0px 1px 18px #C24FB6 ;
+}
+.form {
+  align-items: left;
+  display: flex;
+  flex-direction: column;
+}
+.form-border {
+  background: -webkit-linear-gradient(right, #C24FB6 , #5451B7);
+  height: 1.6px;
+  width: 100%;
+}
+.form-content {
+  background: #fbfbfb;
+  border: none;
+  outline: none;
+  padding-top: 14px;
+}
+.aligned {
+            display: flex;
+            align-items: center;
+            margin-left: 625px;
+            margin-top: 80px;
+       
+        
+        }
+          
+        span {
+            padding: 10px;
+            font-size: 30px;
+            
+        }
+        .copy
+        {
+          margin-top: 30px;
+          margin-left: 580px;
+        }
+
+</style>
+<body>
+  <div class="aligned">
+    <img src= imgs/icon.png width="50" alt="">
+         
+    <span>Amrita Faucet</span>
+</div>
+
+            <div id="card">
+              <div id="card-content">
+                <div id="card-title">
+                  <h2>LOGIN</h2>
+                </div>
+                <form class="form">
+                  <label for="user-email" style="padding-top:13px">
+                      &nbsp;Email
+                    </label>
+                  <input id="user-email" class="form-content" type="email" name="email" autocomplete="on" required />
+                  <div class="form-border"></div>
+                  <label for="user-password" style="padding-top:22px">&nbsp;Password
+                    </label>
+                  <input id="user-password" class="form-content" type="password" name="password" required />
+                  <div class="form-border"></div>
+                  <a href="#">
+                    <legend id="forgot-pass">Forgot password?</legend>
+                  </a>
+                  <input id="submit-btn" type="submit" name="submit" value="LOGIN" />
+                  <a href="#" id="signup">Don't have account yet?</a>
+                </form>
+              </div>
+            </div>
+            <div class="copy">
+              <p>© 2022 A-Faucet Insights, Inc. • <a href="#" style="color: black;">Terms of Service</a></p>
+              </div>
+    </body>
+</html>
