@@ -7,6 +7,78 @@
     </head>
     <header class="header" style="margin-left:-60px;">
       <div class="nav">
+
+
+<!--Function to send ether-->
+<script type="module">
+          import { ethers } from "https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.esm.min.js";
+          const AddressValidity = {}
+
+          const sendEther = async() =>{
+            const API_KEY = "https://eth-goerli.g.alchemy.com/v2/UUyQAVnk1JZBSMzHOrNYDr5MAPTuj16s";
+
+            const provider = new ethers.provider(API_KEY);
+
+            var address = ethers.utils.getAddress(document.getElementById("EtherWallet"));
+
+            currentTimeStamp = new Date().Now();
+
+            if (!AddressValidity.hasOwnProperty(address)){
+              AddressValidity[address] = new Date().Now();
+            }
+
+            if((AddressValidity[address]+ 86400) <= currentTimeStamp ){
+
+            if(ethers.utils.isAddress(address)){
+
+              
+              const signer = new ethers.Wallet('850fc672a15a70fb71179ea57d754d125ad006c466db11f78713be60d45ea213',provider);
+              
+              console.log("About to send funds")
+
+              try{
+              
+              const sendfunds = await signer.sendTransaction({ 
+              
+                to: address,
+              
+                value: ethers.utils.parseEther("0.00001")
+              
+              })
+
+              AddressValidity[address] = currentTimeStamp;
+             
+              const requiredconfirmations = 2;
+              await sendfunds.wait(requiredconfirmations);
+
+            }
+            catch(err){
+              alert("Transaction sending failed")
+            }
+            }
+            else{
+              alert("Invalid address entered");
+            }
+
+        }
+
+        else{
+          alert("24 hours has not passed since your last claim")
+        }
+      }
+
+
+      function CallingSendEther(){
+        sendEther();
+      }
+        
+          //
+   </script>
+
+
+
+
+
       <!-- <div class="container">
         </div> -->
         <img src="./img/icon.png" width="40px" height="40px" style="margin-left: 10px;margin-top: 5px;">
@@ -24,13 +96,14 @@
       </header>
     <body>
       <center><h1 class="h1">AMRITA FAUCET</h1></center>
-      <center><p style="color:white">Fast and reliable. 0.5 Amritaa4444 MATIC/day.</p></center>
+      <center><p style="color:white">Fast and reliable. 0.00001 Gorelli Eth/day.</p></center>
       <center><div class="box"></div></center>
       <center>
         <div class="container" style="margin-top: -350px;">
-            <form>
-                <input type="text" placeholder="Enter your wallet address" class="searchbar">
-                <input type="submit" value="Send Me ETH">
+            <form >
+
+                <input type="text" placeholder="Enter your wallet address" class="searchbar" id="EtherWallet">
+                <input type = "button" onclick = "CallingSendEther()" value = "Send Ether">
             </form>
         </div>
             <p style="color:white"><a href="" style="text-decoration:none;color:black">Please signup or login</a> with Amrita Faucet to request ETH. It's free!</p>

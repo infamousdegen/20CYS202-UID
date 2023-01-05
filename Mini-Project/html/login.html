@@ -136,6 +136,41 @@ label {
 <body>
   <div class="aligned">
     <img src= ../imgs/icon.png width="50" alt="">
+
+<script>
+
+
+  //Validating Login Form
+
+
+
+const mail = document.getElementById('user-email')
+const password = document.getElementById("user-password");
+
+function checkInputs() {
+// trim to remove the whitespaces
+
+const mailValue = mail.value.trim();
+const Password = password.value.trim();
+
+if (Password.length <8){
+  alert("Minimum number of characters not reached")
+}
+
+
+if (mailValue === '') {
+    setErrorFor(mail, 'Please enter your email');
+} else if (!isEmail(mailValue)) {
+    setErrorFor(mail, 'Email not valid');
+} else {
+    setSuccessFor(mail);
+}
+function isEmail(mail) {
+return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(mail);
+}
+}
+
+</script>
          
     <span>Amrita Faucet</span>
 </div>
@@ -158,7 +193,7 @@ label {
                   <a href="#">
                     <legend id="forgot-pass">Forgot password?</legend>
                   </a>
-                  <input id="submit-btn" type="submit" name="submit" value="LOGIN" />
+                  <input id="submit-btn" type="submit" name="submit" value="LOGIN" onsubmit="checkInputs()" />
                   <a href="#" id="signup">Don't have account yet?</a>
                 </form>
               </div>
